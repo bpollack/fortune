@@ -13,8 +13,8 @@ import (
 )
 
 const (
-	NORMAL    = "freebsd.fortunes"
-	OFFENSIVE = "offensive.fortunes"
+	normalFileName    = "freebsd.fortunes"
+	offensiveFileName = "offensive.fortunes"
 )
 
 func readFortunes(filename string) (fortunes []string, err error) {
@@ -62,13 +62,13 @@ func executablePath() string {
 func main() {
 	offensive := flag.Bool("o", false, "be offensive")
 	flag.Parse()
-	fortunes, err := readFortunes(filepath.Join(executablePath(), NORMAL))
+	fortunes, err := readFortunes(filepath.Join(executablePath(), "fortunes", normalFileName))
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "unable to load normal fortunes: %v\n", err)
 		os.Exit(1)
 	}
 	if *offensive {
-		offensiveFortunes, err := readFortunes(filepath.Join(executablePath(), OFFENSIVE))
+		offensiveFortunes, err := readFortunes(filepath.Join(executablePath(), offensiveFileName))
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "unable to load offensive fortunes: %v\n", err)
 			os.Exit(1)
