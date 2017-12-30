@@ -9,7 +9,6 @@ import (
 	"os"
 	"os/exec"
 	"path/filepath"
-	"time"
 )
 
 const (
@@ -76,6 +75,5 @@ func main() {
 		fortunes = append(fortunes, offensiveFortunes...)
 	}
 
-	rand.Seed(time.Now().UnixNano())
 	fmt.Print(fortunes[rand.Intn(len(fortunes))])
 }
