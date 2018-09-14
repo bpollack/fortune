@@ -1,1 +1,1 @@
-module "bitbucket.org/bpollack/fortune"
+module "github.com/bpollack/fortune"

@@ -1,4 +1,4 @@
-package main // import "bitbucket.org/bpollack/fortune"
+package main
 
 import (
 	"bufio"
